@@ -20,7 +20,7 @@ os.mkdir(path+'pdf')
 path = path+'pdf/'
 for i in range(len(pages)):
     sv = path+str(i)+'.jpg'
-   pages[i].save(sv,'JPEG')
+    pages[i].save(sv,'JPEG')
 del pages
 Name = []
 FName = []
@@ -69,7 +69,6 @@ for z in range(2,len(os.listdir(path))-1):
         n = 0
         f = 0
         v = 0
-         v = 0
         for j in range(len(x)):
             if x[j].startswith("Name"):
                 Name.append(x[j])
