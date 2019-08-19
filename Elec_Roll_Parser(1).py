@@ -83,15 +83,16 @@ for z in range(2,len(os.listdir(path))-1):
                         if not any(q in x[j] for q in li):
                             if len(x[j])>8:
                                 if '_' not in x[j]:
-                                    vt.append(x[j])
-                                    v+=1
+                                    if re.search('[0-9]',x[j]):
+                                      vt.append(x[j])
+                                      v+=1
         if n==0:
             Name.append('Name : Deleted')
         if f==0:
             FName.append("FName : Deleted")
         if v==0:
             vt.append("Deleted")    
-assert len(FName)==len(Name)==len(vt)
+        assert len(FName)==len(Name)==len(vt)
 print('Cleaining The Data....\n')
 
 # # Cleaning Up the Voter IDs
@@ -182,7 +183,10 @@ for i in FName_f2:
     FName2.append(i.split(sep = ':')[1:])
 FName3 = []
 for i in FName2:
-    FName3.append(i[0][1:])
+    if len(i)==0:
+        FName3.append('deleted')
+    else:
+        FName3.append(i[0][1:])
 FName4 = []
 for i in FName3:
     str2 = []
