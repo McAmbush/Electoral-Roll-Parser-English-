@@ -1,0 +1,6 @@
+pytesseract
+pandas
+numpy
+cv2
+PyMuPdf
+fitz
